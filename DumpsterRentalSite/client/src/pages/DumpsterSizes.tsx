@@ -2,7 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, Package } from "lucide-react";
-import sizesImage from "@assets/generated_images/Three_dumpster_sizes_comparison_1492bcd3.png";
+import dumpster12Yard from "@assets/generated_images/Attachment-1 5.jpeg";
+import dumpster16Yard from "@assets/generated_images/Attachment-1 6.jpeg";
 
 export default function DumpsterSizes() {
   const sizes = [
@@ -10,6 +11,7 @@ export default function DumpsterSizes() {
       name: "12 Yard Dumpster",
       dimensions: "Compact size for residential projects",
       capacity: "12 cubic yards",
+      image: dumpster12Yard,
       pricing: [
         { duration: "24 hours", price: "$250" },
         { duration: "2 days", price: "$275" },
@@ -32,6 +34,7 @@ export default function DumpsterSizes() {
       name: "16 Yard Dumpster",
       dimensions: "Larger capacity for bigger projects",
       capacity: "16 cubic yards",
+      image: dumpster16Yard,
       pricing: [
         { duration: "2 days (minimum)", price: "$325" },
         { duration: "3 days", price: "$350" },
@@ -63,13 +66,21 @@ export default function DumpsterSizes() {
             </p>
           </div>
 
-          <div className="mb-16 rounded-lg overflow-hidden">
-            <img
-              src={sizesImage}
-              alt="Dumpster size comparison"
-              className="w-full h-auto object-cover"
-              data-testid="img-sizes-comparison"
-            />
+          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-lg overflow-hidden">
+              <img
+                src={dumpster12Yard}
+                alt="12 Yard Dumpster"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden">
+              <img
+                src={dumpster16Yard}
+                alt="16 Yard Dumpster"
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
@@ -88,6 +99,14 @@ export default function DumpsterSizes() {
                     </div>
                   </div>
                 )}
+
+                <div className="mb-4 rounded-lg overflow-hidden">
+                  <img
+                    src={size.image}
+                    alt={size.name}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
 
                 <div className="flex items-start justify-between mb-4">
                   <div>
