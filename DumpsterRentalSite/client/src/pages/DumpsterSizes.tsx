@@ -7,61 +7,45 @@ import sizesImage from "@assets/generated_images/Three_dumpster_sizes_comparison
 export default function DumpsterSizes() {
   const sizes = [
     {
-      name: "10 Yard Dumpster",
-      dimensions: "12' L × 8' W × 3.5' H",
-      capacity: "10 cubic yards",
-      weight: "Up to 2 tons",
+      name: "12 Yard Dumpster",
+      dimensions: "Compact size for residential projects",
+      capacity: "12 cubic yards",
+      pricing: [
+        { duration: "24 hours", price: "$250" },
+        { duration: "2 days", price: "$275" },
+        { duration: "3 days", price: "$300" },
+        { duration: "4 days", price: "$325" },
+        { duration: "5 days", price: "$350" },
+        { duration: "6 days", price: "$375" },
+        { duration: "Week", price: "$400" },
+      ],
       ideal: [
         "Small bathroom remodels",
         "Garage cleanouts",
         "Minor landscaping projects",
         "Small deck removal",
-        "Carpet removal (up to 1,500 sq ft)",
+        "Carpet removal",
       ],
-      truckLoads: "3-4 pickup truck loads",
-    },
-    {
-      name: "20 Yard Dumpster",
-      dimensions: "22' L × 8' W × 4.5' H",
-      capacity: "20 cubic yards",
-      weight: "Up to 3 tons",
-      ideal: [
-        "Medium home renovations",
-        "Roof replacements (up to 2,000 sq ft)",
-        "Large cleanouts",
-        "Flooring removal (2,000-3,000 sq ft)",
-        "Deck or fence removal",
-      ],
-      truckLoads: "6-8 pickup truck loads",
       popular: true,
     },
     {
-      name: "30 Yard Dumpster",
-      dimensions: "22' L × 8' W × 6' H",
-      capacity: "30 cubic yards",
-      weight: "Up to 4 tons",
-      ideal: [
-        "Major home additions",
-        "New construction cleanup",
-        "Large demolition projects",
-        "Commercial cleanouts",
-        "Whole home cleanouts",
+      name: "16 Yard Dumpster",
+      dimensions: "Larger capacity for bigger projects",
+      capacity: "16 cubic yards",
+      pricing: [
+        { duration: "2 days (minimum)", price: "$325" },
+        { duration: "3 days", price: "$350" },
+        { duration: "4 days", price: "$375" },
+        { duration: "5 days", price: "$400" },
+        { duration: "7 days", price: "$450" },
       ],
-      truckLoads: "9-12 pickup truck loads",
-    },
-    {
-      name: "40 Yard Dumpster",
-      dimensions: "22' L × 8' W × 8' H",
-      capacity: "40 cubic yards",
-      weight: "Up to 5 tons",
       ideal: [
-        "Large commercial projects",
-        "Complete building demolition",
-        "Major construction sites",
-        "Large estate cleanouts",
-        "Industrial waste removal",
+        "Medium home renovations",
+        "Roof replacements",
+        "Large cleanouts",
+        "Flooring removal",
+        "Deck or fence removal",
       ],
-      truckLoads: "12-16 pickup truck loads",
     },
   ];
 
@@ -72,7 +56,10 @@ export default function DumpsterSizes() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Dumpster Sizes & Pricing</h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Choose the perfect size for your project. All rentals include delivery, pickup, and disposal.
+              We carry 12 yard and 16 yard containers. All rentals include delivery, pickup, and disposal.
+            </p>
+            <p className="text-sm text-muted-foreground mt-4">
+              *All rental prices are minimum prices depending on location of site and materials being loaded (weight)
             </p>
           </div>
 
@@ -112,14 +99,20 @@ export default function DumpsterSizes() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b">
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Capacity</p>
-                    <p className="font-semibold">{size.capacity}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground mb-1">Weight Limit</p>
-                    <p className="font-semibold">{size.weight}</p>
+                <div className="mb-6 pb-6 border-b">
+                  <p className="text-xs text-muted-foreground mb-1">Capacity</p>
+                  <p className="font-semibold">{size.capacity}</p>
+                </div>
+
+                <div className="mb-6">
+                  <p className="text-sm font-semibold mb-3">Rental Pricing:</p>
+                  <div className="space-y-2">
+                    {size.pricing.map((price, idx) => (
+                      <div key={idx} className="flex justify-between items-center bg-muted rounded-md p-3">
+                        <span className="text-sm">{price.duration}</span>
+                        <span className="font-semibold text-primary">{price.price}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -133,11 +126,6 @@ export default function DumpsterSizes() {
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <div className="bg-muted rounded-md p-3 mb-6">
-                  <p className="text-xs text-muted-foreground mb-1">Equivalent To</p>
-                  <p className="text-sm font-semibold">{size.truckLoads}</p>
                 </div>
 
                 <Link href="/contact" data-testid={`button-select-size-${index}`}>
