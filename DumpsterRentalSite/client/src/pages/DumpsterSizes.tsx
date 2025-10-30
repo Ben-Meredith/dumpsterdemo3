@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, Package } from "lucide-react";
-import heroImage from "@assets/generated_images/Attachment1.jpeg";
+import heroImage from "@assets/generated_images/Attachment-1.jpeg";
 import dumpster12Yard from "@assets/generated_images/Attachment-1 5.jpeg";
 import dumpster16Yard from "@assets/generated_images/Attachment-1 6.jpeg";
 
