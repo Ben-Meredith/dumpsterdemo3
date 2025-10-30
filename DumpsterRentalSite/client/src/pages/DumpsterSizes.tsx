@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle2, Package } from "lucide-react";
+import heroImage from "@assets/generated_images/Attachment1.jpeg";
 import dumpster12Yard from "@assets/generated_images/Attachment-1 5.jpeg";
 import dumpster16Yard from "@assets/generated_images/Attachment-1 6.jpeg";
 
@@ -66,21 +67,13 @@ export default function DumpsterSizes() {
             </p>
           </div>
 
-          <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-lg overflow-hidden">
-              <img
-                src={dumpster12Yard}
-                alt="12 Yard Dumpster"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <img
-                src={dumpster16Yard}
-                alt="16 Yard Dumpster"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          <div className="mb-16 rounded-lg overflow-hidden">
+            <img
+              src={heroImage}
+              alt="Our Dumpsters"
+              className="w-full h-auto object-cover"
+              data-testid="img-hero"
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
