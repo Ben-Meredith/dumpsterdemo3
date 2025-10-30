@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Truck, Trash2, Home as HomeIcon, Clock, CheckCircle, Phone } from "lucide-react";
-import heroImage from "@assets/generated_images/Attachment-1.jpeg";
+import heroImage from "@assets/generated_images/Attachment-1 2.jpeg";
 
 export default function Home() {
   const services = [
